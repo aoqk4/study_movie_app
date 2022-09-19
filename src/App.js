@@ -1,56 +1,57 @@
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import Movie from "./components/Movie";
+import "./App.css";
 
-// state는 동적 데이터를 다룰 때 사용하는 리액트 요소. let..
+function App(props) {
+  const [loading, setLoading] = useState(true);
 
-// function App() {
-//   return <div>함수 컴포넌트</div>;
-// }
+  const [movies, setMovies] = useState([]);
 
-// class App extends React.Component {
-//   render() {
-//     return <div>클래스 컴포넌트</div>;
-//   }
-// }
+  async function getMovieApi() {
+    if (0 < movies.length) {
+      return;
+    }
 
-class App extends React.Component {
-  constructor(props) {
-    super(props); // 부모 생성자
+    const URL = `https://api.themoviedb.org/3/movie/popular?api_key=a16a0f3264d8802455a13881d70f4e10&language=ko&page=1`;
 
-    this.state = {
-      cnt: 0,
-    };
+    const result = await axios.get(URL);
+
+    setMovies(result.data.results);
+    setLoading(false);
   }
 
-  plus = () => {
-    // console.log("증가");
-    // this.setState({ cnt: this.state.cnt + 1 });
-    this.setState((state) => {
-      console.log(JSON.stringify(state));
-      return { cnt: state.cnt + 1 };
-    });
-  };
+  useEffect(() => {
+    getMovieApi();
+  }, []);
 
-  minus = () => {
-    // console.log("감소");
-
-    // 안1.
-    // this.setState({ cnt: this.state.cnt - 1 });
-
-    // 안2. 객체가 더욱더 복잡한 구조가 되었을 때
-    this.setState((state) => {
-      console.log(JSON.stringify(state));
-      return { cnt: state.cnt - 1 };
-    });
-  };
-  render() {
-    return (
-      <div>
-        <h1>카운터 : {this.state.cnt}</h1>
-        <button onClick={this.plus}>+1</button>{" "}
-        <button onClick={this.minus}>-1</button>
-      </div>
-    );
-  }
+  return (
+    <>
+      {loading ? (
+        <div>로딩중...</div>
+      ) : (
+        <div className="movieContainer">
+          {movies.map((ele) => {
+            return (
+              <Movie
+                key={ele.id}
+                title={ele.title}
+                poster_path={ele.poster_path}
+                overview={ele.overview}
+                vote_average={ele.vote_average}
+                adult={ele.adult}
+                original_language={ele.original_language}
+                release_date={ele.release_date}
+                id={ele.id}
+              />
+            );
+          })}
+        </div>
+      )}
+    </>
+  );
 }
 
 export default App;
