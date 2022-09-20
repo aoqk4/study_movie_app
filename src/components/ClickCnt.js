@@ -28,13 +28,15 @@ function ClickCnt(props) {
   const [cnt, setCnt] = useState(-1);
 
   function 증가함수() {
-    setId(
-      setInterval(() => {
-        setCnt((prev) => {
-          return prev + 1;
-        });
-      }, 1000)
-    );
+    if (0 === timeId) {
+      setId(
+        setInterval(() => {
+          setCnt((prev) => {
+            return prev + 1;
+          });
+        }, 1000)
+      );
+    }
   }
   function 감소함수() {
     clearInterval(timeId);

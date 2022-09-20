@@ -1,0 +1,27 @@
+ul {
+  margin-top: 0;
+  padding: 0;
+  background-color: gray;
+  list-style-type: none;
+  border-bottom: 3px solid black;
+  position: relative;
+}
+
+li {
+  border-right: 1px solid;
+  padding: 8px;
+  display: inline-block;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.li__about {
+  border-left: 1px solid darkred;
+  border-right: none;
+  position: absolute;
+  right: 0;
+}
