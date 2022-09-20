@@ -50,6 +50,9 @@ function Menu() {
         <li>
           <Link to="/upcoming">🔴개봉 예정</Link>
         </li>
+        <li>
+          <Link to="/YouTube">유튜브</Link>
+        </li>
         <li className="li__about">
           <Link to="about">About..</Link>
         </li>
