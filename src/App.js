@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
 import Movies from "./components/Movies";
 import Menu from "./components/Menu";
 import ClickCnt from "./components/ClickCnt";
@@ -16,7 +16,7 @@ function About() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Menu />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,7 +27,7 @@ function App() {
         <Route path="/ClickCnt" element={<ClickCnt />} />
         <Route path="/YouTube" element={<YouTube />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
   // return (
   //   <>
