@@ -4,7 +4,7 @@ import Movies from "./components/Movies";
 import Menu from "./components/Menu";
 import ClickCnt from "./components/ClickCnt";
 import YouTube from "./components/YouTube";
-// import "./App.css";
+import Tailwind from "./components/Tailwind";
 
 function Home() {
   return <h2>Home</h2>;
@@ -26,6 +26,7 @@ function App() {
         <Route path="/upcoming" element={<Movies apiPath="upcoming" />} />
         <Route path="/ClickCnt" element={<ClickCnt />} />
         <Route path="/YouTube" element={<YouTube />} />
+        <Route path="/tailwind" element={<Tailwind />} />
       </Routes>
     </HashRouter>
   );

@@ -56,6 +56,9 @@ function Menu() {
         <li className="li__about">
           <Link to="about">About..</Link>
         </li>
+        <li>
+          <Link to="/tailwind">Tailwind</Link>
+        </li>
       </ul>
     </nav>
   );
