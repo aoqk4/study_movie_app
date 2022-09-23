@@ -5,6 +5,7 @@ import Menu from "./components/Menu";
 import ClickCnt from "./components/ClickCnt";
 import YouTube from "./components/YouTube";
 import Tailwind from "./components/Tailwind";
+import Timer from "./components/Timer";
 
 function Home() {
   return <h2>Home</h2>;
@@ -27,6 +28,7 @@ function App() {
         <Route path="/ClickCnt" element={<ClickCnt />} />
         <Route path="/YouTube" element={<YouTube />} />
         <Route path="/tailwind" element={<Tailwind />} />
+        <Route path="/timer" element={<Timer />} />
       </Routes>
     </HashRouter>
   );

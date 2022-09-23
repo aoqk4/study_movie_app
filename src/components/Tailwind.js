@@ -1,8 +1,8 @@
 function Tailwind() {
   return (
     <>
-      <div className="flex relative flex-col bg-white text-slate-700">
-        <div className="flex justify-between font-bold bg-white pl-2">
+      <div className="flex relative flex-col bg-white text-slate-700 dark:bg-slate-700 dark:text-white">
+        <div className="flex justify-between font-bold pl-2">
           더보기
           <div className="flex border-1 border-black px-2">
             <div className="px-[6px]">
@@ -76,7 +76,7 @@ function Tailwind() {
             </div>
           </div>
         </div>
-        <div className="flex bg-white pt-3 px-2 items-center">
+        <div className="flex pt-3 px-2 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -105,7 +105,7 @@ function Tailwind() {
           </div>
         </div>
         <div className="m-3">
-          <div className="flex justify-between items-center bg-gray-200 py-2 rounded-md">
+          <div className="flex justify-between items-center bg-gray-200 py-2 rounded-md dark:text-slate-700">
             <div className="flex items-center text-sm ml-2 bg-white border-solid border rounded-xl px-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -400,7 +400,7 @@ function Tailwind() {
           </div>
         </div>
         <div className="mt-10"></div>
-        <div className="pt-1 fixed flex px-8  bg-slate-100 bottom-0">
+        <div className="pt-1 fixed flex px-8  bg-slate-100 bottom-0 dark:bg-slate-800 dark:text-white">
           <div className="pr-16">
             <svg
               xmlns="http://www.w3.org/2000/svg"
